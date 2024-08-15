@@ -1,0 +1,18 @@
+---
+marp: true
+theme: uncover
+author: Evandro Chagas Ribeiro da Rosa <evandro@univali.br>
+title: Algoritmos e Programação II
+backgroundColor: white
+math: mathjax
+---
+
+![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://evandro-crr.github.io/alg2)
+
+**Algoritmos e Programação II**
+
+- [Aula 1 : Revisão](slides/1_aula.html)
+- [Aula 2 : Funções](slides/2_aula.html)
+
+
+<!-- _footer: Evandro Chagas Ribeiro da Rosa -->

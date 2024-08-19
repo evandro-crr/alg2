@@ -1,1 +1,7 @@
 public
+listas/_minted**
+listas/*.aux
+listas/*.fdb_latexmk
+listas/*.fls
+listas/*.log
+listas/*.synctex.gz

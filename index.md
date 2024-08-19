@@ -13,6 +13,7 @@ math: mathjax
 
 - [Aula 1 : Revisão](slides/1_aula.html)
 - [Aula 2 : Funções](slides/2_aula.html)
+    - [Lista de exercícios](listas/1_lista.pdf) 
 
 
 <!-- _footer: Evandro Chagas Ribeiro da Rosa -->

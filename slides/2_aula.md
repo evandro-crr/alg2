@@ -266,10 +266,10 @@ int main() {
     int resultado = soma(3, 8);
     std::cout << "3 + 8 = ";
     std::cout << resultado << "\n";
-  return 0;
+    return 0;
 }
 
-int soma(int a, int b)
+int soma(int a, int b) {
     int resultado = a + b;
     return resultado;
 }
@@ -380,6 +380,135 @@ int main() {
   - `calcular_10pc`
 
 
+
+</dev>
+</dev>
+
+---
+
+# Pesagem de Valor por Referencia    
+
+
+<dev class="columns">
+
+<dev>
+
+```cpp
+#include <iostream>
+
+void ler_numero_0_100(int &var) {
+    do {
+        std::cout << "Escreva um numero de 0 a 100: ";
+        std::cin >> var;
+    } while (var < 0 || var > 100);
+} 
+
+int main() {
+    int num1, num2;
+    ler_numero_0_100(num1);
+    ler_numero_0_100(num2);
+    std::cout << "Os números são: "
+              << num1 << " "
+              << num2 << "\n";
+}
+```
+
+</dev>
+<dev>
+
+- Por padrão, o valor do argumento é copiado para a variável de argumento.
+- É possível passar argumentos por referencia usando uma varável de referencia.
+- Argumentos passados por referencia podem mudar o valor da varável de entrada. 
+
+
+
+</dev>
+</dev>
+
+---
+
+# Argumento Padrão
+
+
+<dev class="columns">
+
+<dev>
+
+```cpp
+#include <iostream>
+
+void add_inplace(int&, int = 1);
+//void add_inplace(int &var, int valor = 1);
+
+
+int main() {
+    int var = 0;
+    add_inplace(var);
+    add_inplace(var);
+    add_inplace(var, 10);
+    std::cout << "O valor é: "
+              << var << "\n";
+}
+
+void add_inplace(int &var, int valor) {
+    var += valor;
+} 
+```
+
+</dev>
+<dev>
+
+- É possível de definir um valor padrão para um argumento.
+- O valor padrão será usado caso o argumento não seja passado.
+- Só é possível definir um valor padrão para os últimos argumentos.
+- Não é possível definir um valor padrão para um argumento passado por referencia. 
+
+
+
+</dev>
+</dev>
+
+---
+
+# Sobrecarga de Funções 
+
+
+<dev class="columns">
+
+<dev>
+
+```cpp
+#include <iostream>
+
+int media(int, int);
+double media(double, double);
+
+int main() {
+    std::cout << "media(5, 2) = "
+              << media(5, 2) << "\n"
+              << "media(5.0, 2.0) = "
+              << media(5.0, 2.0) << "\n";
+    return 0;
+}
+
+int media(int a, int b) {
+    return (a + b) / 2;
+}
+
+double media(double a, double b) {
+    return (a + b) / 2;
+}
+```
+
+</dev>
+<dev>
+
+Duas ou mais funções podem ter o mesmo nome, desde que, tenham parâmetros distintos. 
+
+- A *assinatura da função* é o que distingue uma função da outra:
+    - `media(int, int)`
+    - `media(double, double)`
+- O tipo do retorno não faz parte da assinatura da função.
 
 </dev>
 </dev>

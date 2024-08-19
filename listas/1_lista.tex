@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+
+\title{Algoritmos e Programação II\\
+\large Lista de Execícios: Funções}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8.4cm}} Código de Pessoa: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+    \item Responda sucintamente:
+          \begin{enumerate}
+              \item Por que variáveis locais perdem seus valores entre uma chamadas de função e outra?
+              \item Onde você define variáveis de parâmetro?
+              \item Se você estiver escrevendo uma função que aceita um argumento e deseja garantir que a função não possa alterar o valor do argumento, o que você deve fazer?
+              \item Quando uma função aceita múltiplos argumentos, a ordem em que os argumentos são passados importa?
+              \item Como você retorna um valor de uma função?
+              \item Qual é a vantagem de dividir o código da sua aplicação em vários procedimentos (funções) pequenos?
+              \item Dê um exemplo onde passar um argumento por referência seria útil.
+              \item O que é necessário para que duas ou mais funções posam ter o mesmo nome?
+          \end{enumerate}
+    \item Os códigos abaixo possem um ou mais erros, indique quais:
+          \begin{enumerate}
+              \item \begin{minted}{cpp}
+void total(int valor1, valor2, valor3) {
+    return valor1 + valor2 + valor3;
+}
+        \end{minted}
+              \item \begin{minted}{cpp}
+double media(int valor1, int valor2, int valor3) {
+    double media;
+    media = valor1 + valor2 + valor3 / 3;
+}
+        \end{minted}
+              \item \begin{minted}{cpp}
+void area(int altura = 30, int largura) {
+    return altura * largura;
+}
+        \end{minted}
+              \item \begin{minted}{cpp}
+void get_valor(int valor&) {
+    std::cout << "Passe um valor: ";
+    std::cin >> valor&;
+}
+        \end{minted}
+          \end{enumerate}
+    \item Escreva um programa que peça ao usuário para inserir o custo de atacado de um item e a porcentagem de margem de lucro. Em seguida, ele deve exibir o preço de varejo do item. Por exemplo:
+          \begin{itemize}
+              \item Se o custo de atacado de um item é 5,00 e a porcentagem de margem de lucro é 100\%, então o preço de varejo do item é 10,00.
+              \item Se o custo de atacado de um item é 5,00 e a porcentagem de margem de lucro é 50\%, então o preço de varejo do item é 7,50.
+          \end{itemize}
+
+          O programa deve ter uma função chamada \texttt{calcularPrecoVarejo} que recebe o custo de atacado e a porcentagem de margem de lucro como argumentos e retorna o preço de varejo do item.
+
+          \textbf{Validação de Entrada}: Não aceite valores negativos para o custo de atacado do item ou para a porcentagem de margem de lucro.
+
+
+    \item Escreva um programa que determine qual das quatro filiais de uma empresa (Nordeste, Sudeste, Noroeste e Sudoeste) teve as maiores vendas em um trimestre. Ele deve incluir as seguintes duas funções, que são chamadas pela função \texttt{main}:
+          \begin{itemize}
+              \item  \texttt{double obterVendas(...)} recebe o nome de uma filial. Ele solicita ao usuário o valo total de vendas trimestrais da filial, valida a entrada e, em seguida, a retorna. Esta função deve ser chamada uma vez para cada filial.
+              \item \texttt{void encontrarMaior(...)} recebe os quatro totais de vendas. Ela determina qual é o maior e imprime o nome da divisão com o maior faturamento, junto com seu valor de vendas.
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Não aceite valores em menores que 0,00.
+
+    \item Um número primo é um número que só é divisível por ele mesmo e por 1. Por exemplo, o número 5 é primo porque só pode ser dividido por 1 e 5. No entanto, o número 6 não é primo porque pode ser dividido por 1, 2, 3 e 6. Escreva um programa que listar todos os números primos de 1 até um número \texttt{limite} fornecido pelo usuário. O programa deve incluir as seguintes funções:
+          \begin{itemize}
+
+
+              \item \texttt{bool ehPrimo(int numero)} recebe um número inteiro como argumento e retorna \texttt{true} se o número for primo, ou \texttt{false} caso contrário.
+
+              \item  \texttt{void listarPrimos(int limite)} recebe um número inteiro \texttt{limite} e usa a função \texttt{ehPrimo} para listar todos os números primos de 1 até \texttt{limite}. A função deve imprimir os números primos em uma linha.
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Certifique-se de que o número fornecido pelo usuário é um inteiro positivo. Caso contrário, peça ao usuário para inserir um número válido.
+    \item Uma empresa de pintura determinou que, para cada 10 metros quadrados de parede, é necessário um litro de tinta e oito horas de trabalho. A empresa cobra R\$25,00 por hora de trabalho. Escreva um programa modular que permita ao usuário inserir o número de cômodos a serem pintados e o preço da tinta por litro. O programa também deve solicitar a metragem quadrada das paredes de cada cômodo. Em seguida, deve exibir os seguintes dados:
+          \begin{itemize}
+              \item A quantidade de litros de tinta necessários
+              \item As horas de trabalho necessárias
+              \item O custo da tinta
+              \item O custo do trabalho
+              \item O custo total do serviço de pintura
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Não aceite um valor menor que 1 para o número de cômodos. Não aceite um valor menor que R\$10,00 para o preço da tinta. Não aceite um valor negativo para a metragem quadrada das paredes.
+
+    \item Em uma competição de talentos, há cinco jurados, cada um atribuindo uma nota entre 0 e 10 para cada apresentador. Notas fracionárias, como 8,3, são permitidas. A nota final de um apresentador é determinada descartando a maior e a menor nota recebidas e, em seguida, calculando a média das três notas restantes. Escreva um programa que utilize esse método para calcular a nota de um competidor. O programa deve incluir as seguintes funções:
+
+          \begin{itemize}
+              \item  \texttt{void obterNotaJurado(...)} deve solicitar ao usuário a nota de um jurado, armazená-la em uma variável de parâmetro passada por referência e validar a entrada. A função deve ser chamada uma vez para cada um dos cinco jurados.
+              \item  \texttt{void calcularNotaFinal(...)} deve calcular e exibir a média das três notas que permanecem após descartar as notas mais alta e mais baixa recebidas. Esta função deve ser chamada apenas uma vez pelo \texttt{main} e deve receber as cinco notas, além de usar as funções abaixo para o calculo.
+                    \begin{itemize}
+                        \item  \texttt{double encontrarMenor(...)} deve encontrar e retornar a menor das cinco notas passadas a ela.
+                        \item  \texttt{double encontrarMaior(...)} deve encontrar e retornar a maior das cinco notas passadas a ela.
+                    \end{itemize}
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Não aceite notas abaixo de 0 ou acima de 10.
+
+    \item Suponha que você queira investir uma certa quantia de dinheiro no Tesouro Direto e deixá-la rendendo juros pelos próximos 10 anos. Ao final desses 10 anos, você gostaria de ter R\$10.000 investidos. Quanto você precisa investir hoje para que isso aconteça? Você pode usar a seguinte fórmula, conhecida como fórmula do valor presente, para descobrir:
+
+          \begin{equation*}
+              P = \frac{F}{(1 + r)^n}
+          \end{equation*}
+
+          Os termos da fórmula são os seguintes:
+          \begin{itemize}
+              \item $P$ é o valor presente, ou seja, a quantia que você precisa investir hoje.
+              \item $F$ é o valor futuro que você deseja no investimento. (Neste caso, $F$ é R\$10.000.)
+              \item $r$ é a taxa de juros anual.
+              \item $n$ é o número de anos que você planeja deixar o dinheiro investido.
+          \end{itemize}
+
+          Escreva um programa que tenha uma função chamada \texttt{valorPresente}, que realiza esse cálculo. A função deve aceitar como argumentos o valor futuro, a taxa de juros anual e o número de anos. Ela deve retornar o valor presente, que é a quantia que você precisa investir hoje. Demonstre a função em um programa que permita ao usuário experimentar com diferentes valores para os termos da fórmula.
+
+    \item Um estudante deseja calcular sua média final em uma disciplina, considerando três avaliações que possuem pesos diferentes. Escreva um programa que ajude o estudante a calcular sua média ponderada com base nas notas e pesos fornecidos. O programa deve incluir as seguintes funções:
+          \begin{itemize}
+
+              \item \texttt{void solicitarNotaEPeso(...)} solicita ao usuário a nota e o peso de uma avaliação e validando a entrada. Deve ser chamada para cada avaliação.
+
+              \item \texttt{double calcularMediaPonderada(...)} recebe as três notas e seus respectivos pesos como argumentos e retorna a média ponderada calculada.
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Certifique-se de que as notas fornecidas estejam entre 0 e 10 e que os pesos sejam números positivos. Se o usuário fornecer valores inválidos, peça para inserir novamente até que os valores sejam corretos.
+
+    \item Um sistema de gerenciamento de estoque precisa calcular o valor total de um pedido de produtos. Cada produto tem um preço unitário e uma quantidade solicitada. O programa deve calcular o valor total do pedido, aplicando um desconto se o valor total ultrapassar um determinado limite. Escreva um programa que realize esse cálculo. O programa deve incluir as seguintes funções:
+          \begin{itemize}
+
+              \item \texttt{void solicitarDadosProduto(...)} solicita ao usuário o preço unitário de um produto e a quantidade solicitada, validando a entrada para garantir que o preço seja positivo e a quantidade seja um número inteiro maior que zero.
+
+              \item \texttt{double calcularValorTotal(..)} recebe o preço unitário e a quantidade solicitada e retorna o valor total do produto (preço $\times$ quantidade).
+
+              \item \texttt{double aplicarDesconto(...)} aplica um desconto ao valor total se este ultrapassar o limite estabelecido (passado como argumento). A função retorna o valor total após o desconto (caso seja aplicável).
+
+          \end{itemize}
+
+          \textbf{Validação de Entrada}: Certifique-se de que o preço do produto seja positivo e que a quantidade seja um número inteiro maior que zero. Se o usuário fornecer valores inválidos, peça para inserir novamente até que os valores sejam corretos.
+\end{enumerate}
+
+
+
+\end{document}

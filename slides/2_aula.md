@@ -20,12 +20,9 @@ paginate: true
     }
 </style>
 
-
 # Algoritmos e Programação II
 
-
 https://evandro-crr.github.io/alg2
-
 
 <!-- _footer: Evandro Chagas Ribeiro da Rosa -->
 <!-- _paginate: skip -->
@@ -34,20 +31,18 @@ https://evandro-crr.github.io/alg2
 
 # Funções
 
-- O Objetivo das funções é modularizar o código.
-- Uma função é um conjunto de instruções
-  que realiza uma tarefa especifica.
-- Podemos usar função para implementar a
-  estrategia de *Dividir para conquistar*.
-- Funções também permite reutilizar código.
+- O objetivo das funções é modularizar o código.
+- Uma função é um conjunto de instruções que realiza uma tarefa específica.
+- Podemos usar funções para implementar a estratégia de *Dividir para conquistar*.
+- Funções também permitem reutilizar código.
 
 ---
 
 Uma função com menos instruções é mais fácil de entender. 
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
+<div>
 
 ```cpp
 int main() {
@@ -72,8 +67,9 @@ int main() {
 }
 ```
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 ```cpp
 int main() {
@@ -97,30 +93,32 @@ void func4() {
     instrução;
 }
 ```
-</dev>
-</dev>
+
+</div>
+
+</div>
 
 ---
 
 # Definição de Funções 
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 Uma função é composta das seguintes partes:
 
-- Tipo do retorno
+- Tipo de retorno
 - Nome da função
-- Lista de paramentos
+- Lista de parâmetros
 - Corpo da função
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 ```cpp
-int main(int argv, char** argc) {
+int main(int argc, char** argv) {
   std::cout << "Olá\n";
   return 0;
 }
@@ -134,15 +132,15 @@ void mostrar_mensagem() {
 }
 ```
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Chamada de Funções
 
-Para chamar uma função, basta colocar `()` apos o nome.
-
+Para chamar uma função, basta colocar `()` após o nome.
 
 ```cpp
 #include <iostream>
@@ -168,9 +166,9 @@ int main() {
 
 # Declaração da Função
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
@@ -196,27 +194,28 @@ void func_2() {
 }
 ```
 
-</dev>
-<dev>
+</div>
 
+<div>
 
 - Antes de chamar uma função, o compilador precisa saber:
-O nome da função, o tipo do retorno e seus parâmetros.
+  - O nome da função
+  - O tipo do retorno
+  - Seus parâmetros
 
-- A declaração da função também é chamada de Protótipo da Função.
- 
-</dev>
-</dev>
+- A declaração da função também é chamada de protótipo da função.
+
+</div>
+
+</div>
 
 ---
 
 # Passando Dados para uma Função 
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
-
+<div>
 
 ```cpp
 #include <iostream>
@@ -237,24 +236,25 @@ void mostrar_valor(int valor) {
 }
 ```
 
-</dev>
-<dev>
+</div>
 
+<div>
 
 - `int valor` é um *parâmetro* da função `mostrar_valor`.
-- Quando chamamos a função `mostrar_valor` é necessário fornecer um *argumento* do tipo `int`.
+- Quando chamamos a função `mostrar_valor`, é necessário fornecer um *argumento* do tipo `int`.
 - Na declaração da função não é necessário nomear os parâmetros.
- 
-</dev>
-</dev>
+
+</div>
+
+</div>
 
 ---
 
 # Retornando um valor da Função
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
@@ -275,28 +275,28 @@ int soma(int a, int b) {
 }
 ```
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 - A função `soma` retorna um valor do tipo `int`.
-- A instrução `return` é necessário para definir o retorno.
-- Podemos usar a chada de uma função em uma expressão:
+- A instrução `return` é necessária para definir o retorno.
+- Podemos usar a chamada de uma função em uma expressão:
   ```cpp
   int resultado = soma(19, 32) / 2;
   ```
- 
-</dev>
-</dev>
 
+</div>
+
+</div>
 
 ---
 
 # Variáveis Globais
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
@@ -321,25 +321,25 @@ int main() {
 }
 ```
 
-</dev>
-<dev>
+</div>
 
+<div>
 
-Variáveis definidas fora de uma função são chamadas de variaríeis globais
+Variáveis definidas fora de uma função são chamadas de variáveis globais:
 
-- Qualquer função pode ler ou escrever em uma varável global.
+- Qualquer função pode ler ou escrever em uma variável global.
 - Variáveis globais são inicializadas em zero.
-- Variáveis locais com mesmo nome *sobrepõem* varáveis globais.
+- Variáveis locais com o mesmo nome *sobrescrevem* variáveis globais.
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
@@ -368,37 +368,36 @@ int main() {
 }
 ```
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 ## Complete o Código
 
-- Esse código implementa a dinâmica de uma comanda de ~~bar~~Restaurante.
+- Esse código implementa a dinâmica de uma comanda de restaurante.
 - Implemente as funções:
   - `fazer_pedido`
   - `valor_do_item`
   - `calcular_10pc`
 
+</div>
 
-
-</dev>
-</dev>
+</div>
 
 ---
 
-# Pesagem de Valor por Referencia    
+# Pesagem de Valor por Referência    
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
 
 void ler_numero_0_100(int &var) {
     do {
-        std::cout << "Escreva um numero de 0 a 100: ";
+        std::cout << "Escreva um número de 0 a 100: ";
         std::cin >> var;
     } while (var < 0 || var > 100);
 } 
@@ -413,33 +412,30 @@ int main() {
 }
 ```
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 - Por padrão, o valor do argumento é copiado para a variável de argumento.
-- É possível passar argumentos por referencia usando uma varável de referencia.
-- Argumentos passados por referencia podem mudar o valor da varável de entrada. 
+- É possível passar argumentos por referência usando uma variável de referência.
+- Argumentos passados por referência podem mudar o valor da variável de entrada.
 
+</div>
 
-
-</dev>
-</dev>
+</div>
 
 ---
 
 # Argumento Padrão
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
 
 void add_inplace(int&, int = 1);
-//void add_inplace(int &var, int valor = 1);
-
 
 int main() {
     int var = 0;
@@ -455,27 +451,26 @@ void add_inplace(int &var, int valor) {
 } 
 ```
 
-</dev>
-<dev>
+</div>
 
-- É possível de definir um valor padrão para um argumento.
+<div>
+
+- É possível definir um valor padrão para um argumento.
 - O valor padrão será usado caso o argumento não seja passado.
 - Só é possível definir um valor padrão para os últimos argumentos.
-- Não é possível definir um valor padrão para um argumento passado por referencia. 
+- Não é possível definir um valor padrão para um argumento passado por referência.
 
+</div>
 
-
-</dev>
-</dev>
+</div>
 
 ---
 
 # Sobrecarga de Funções 
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
+<div>
 
 ```cpp
 #include <iostream>
@@ -487,7 +482,9 @@ int main() {
     std::cout << "media(5, 2) = "
               << media(5, 2) << "\n"
               << "media(5.0, 2.0) = "
-              << media(5.0, 2.0) << "\n";
+              << media(5.0, 2.0) <<
+
+ "\n";
     return 0;
 }
 
@@ -500,26 +497,26 @@ double media(double a, double b) {
 }
 ```
 
-</dev>
-<dev>
+</div>
 
-Duas ou mais funções podem ter o mesmo nome, desde que, tenham parâmetros distintos. 
+<div>
+
+Duas ou mais funções podem ter o mesmo nome, desde que tenham parâmetros distintos:
 
 - A *assinatura da função* é o que distingue uma função da outra:
-    - `media(int, int)`
-    - `media(double, double)`
+  - `media(int, int)`
+  - `media(double, double)`
 - O tipo do retorno não faz parte da assinatura da função.
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Algoritmos e Programação II
 
-
 https://evandro-crr.github.io/alg2
-
 
 <!-- _footer: Evandro Chagas Ribeiro da Rosa -->
 <!-- _paginate: skip -->

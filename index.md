@@ -5,6 +5,8 @@ author: Evandro Chagas Ribeiro da Rosa <evandro@univali.br>
 title: Algoritmos e Programação II
 backgroundColor: white
 math: mathjax
+footer: Evandro Chagas Ribeiro da Rosa
+header: https://evandro-crr.github.io/alg2
 ---
 
 ![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://evandro-crr.github.io/alg2)
@@ -16,4 +18,4 @@ math: mathjax
     - [Lista de exercícios](listas/1_lista.pdf) 
 
 
-<!-- _footer: Evandro Chagas Ribeiro da Rosa -->
+

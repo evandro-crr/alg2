@@ -20,12 +20,9 @@ paginate: true
     }
 </style>
 
-
 # Algoritmos e Programação II
 
-
 https://evandro-crr.github.io/alg2
-
 
 <!-- _footer: Evandro Chagas Ribeiro da Rosa -->
 <!-- _paginate: skip -->
@@ -34,49 +31,51 @@ https://evandro-crr.github.io/alg2
 
 # Revisão de Programação I
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
+<div>
 
-* **Expressão**: combinação de literais, varáveis e operadores que geram um valor. Ex.:
-  - `2 + 5 * (x + 2)`   
+* **Expressão**: combinação de literais, variáveis e operadores que geram um valor. Ex.:
+  - `2 + 5 * (x + 2)`
   - `pi * r * r`
   - `10 * (1.0 / 2.0)`
 
-</dev>
-<dev>
+</div>
 
-* **Instrução**: linha de código que que realiza uma ação. Ex.:
+<div>
+
+* **Instrução**: linha de código que realiza uma ação. Ex.:
   - `int a = 10;`
   - `x = 2 * a + 1;`
   - `if (...) ...`
   - `for (int i ...) ...`
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 ## Expressão
 
-Convertendo Expressão algébrica para código 
+Convertendo expressão algébrica para código 
 
 | Expressão Algébrica | C++ Equivalente              |
 | ------------------- | ---------------------------- |
 | $6x$                | `6 * x`                      |
 | $4xy$               | `4 * x * y`                  |
 | $\frac{a+b}{c}$     | `(a + b) / c`                |
-| $3\frac{x}{2}$      | `x / 2 * 3` ou `3 * (x / 2)` |
+| $3\frac{x}{2}$      | `3 * (x / 2)`                |
 | $3bc+4$             | `3 * b * c + 4`              |
-| $\frac{2x+3}{4a-1}$ | `(2 * x + 4) / (4 * a - 1)`  |
+| $\frac{2x+3}{4a-1}$ | `(2 * x + 3) / (4 * a - 1)`  |
 
 ---
 
 # Expressões com Tipos Diferentes
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
+<div>
 
 Ranking dos tipos
 
@@ -88,20 +87,20 @@ Ranking dos tipos
 - `unsigned int`
 - `int`
 
-</dev>
-<dev>
+</div>
 
-- Em uma operação com tipos diferentes, o valor de menor ranking vai ser promovido antes de operação.
-- Em uma atribuição, o valor final vai ser convertido para o tipo da varável sendo atribuída.
+<div>
 
+- Em uma operação com tipos diferentes, o valor de menor ranking será promovido antes da operação.
+- Em uma atribuição, o valor final será convertido para o tipo da variável sendo atribuída.
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Expressões com Tipos Diferentes
-
 
 ```cpp
 int x, y = 4;
@@ -115,10 +114,9 @@ Qual o valor de `x`?
 
 # Instruções de desvio condicional
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
-
+<div>
 
 ```cpp
 if (teste) {
@@ -137,36 +135,37 @@ if (teste) {
 }
 ```
 
-</dev>
-<dev>
+</div>
 
-- `teste` é uma expressão, normalmente, usando operadores relacionais
+<div>
+
+- `teste` é uma expressão, normalmente usando operadores relacionais:
   - `x > y` maior que 
-  - `x < y`  menor que
+  - `x < y` menor que
   - `x >= y` maior ou igual
   - `x <= y` menor ou igual
   - `x == y` igual
   - `x != y` diferente 
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Instrução `switch-case`
 
-<dev class="columns">
+<div class="columns">
 
-<dev>
-
+<div>
 
 ```cpp
-switch (teste){
-case expressão_contante:
+switch (teste) {
+case expressão_constante:
     instrução;
     //...
     break;
-case expressão_contante:
+case expressão_constante:
     instrução;
     //...
     break;
@@ -176,25 +175,24 @@ default:
 }
 ```
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 - `teste` é uma expressão que resulta em um valor `int`.
-- `expressão_contante` é uma expressão que deve ser definida em tempo de compilação, ou seja, o valor não pode ser definido dinamicamente durante a execução.
+- `expressão_constante` é uma expressão que deve ser definida em tempo de compilação, ou seja, o valor não pode ser definido dinamicamente durante a execução.
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Instruções de repetição `while`
 
+<div class="columns">
 
-
-<dev class="columns">
-
-<dev>
-
+<div>
 
 ```cpp
 while(teste) {
@@ -203,80 +201,77 @@ while(teste) {
 }
 ```
 
+- As instruções dentro do *corpo* do `while` executam repetidamente até que a expressão `teste` resulte em falso.
 
-- As instruções dentro do *corpo* do `while` executam repetidamente até que a expressão `test` resulte em falso.
+</div>
 
-</dev>
-<dev>
+<div>
 
 ![h:450](img/while.svg)
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Instruções de repetição `do-while`
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
-
+<div>
 
 ```cpp
 do {
     instrução; 
     //...
-} while(teste)
+} while(teste);
 ```
 
-- As instruções dentro do *corpo* do `do` executam, então a expressão `test` é avaliada, caso resulte em verdadeiro, do corpo do `do` executado novamente.
+- As instruções dentro do *corpo* do `do` são executadas, e então a expressão `teste` é avaliada. Se resultar em verdadeiro, o corpo do `do` é executado novamente.
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 ![h:450](img/do-while.svg)
 
-</dev>
-</dev>
+</div>
+
+</div>
 
 ---
 
 # Instruções de repetição `for`
 
+<div class="columns">
 
-<dev class="columns">
-
-<dev>
-
+<div>
 
 ```cpp
-for (inicialização, teste, incremento) {
-      instrução; 
+for (inicialização; teste; incremento) {
+    instrução; 
     //...
 }
 ```
 
-- As instruções do *corpo* do `for` são executadas repetidamente enquanto a expressão de teste for verdadeira. Mas a variável do teste é atualizada a cada iteração.
+- As instruções do *corpo* do `for` são executadas repetidamente enquanto a expressão de teste for verdadeira. A variável do teste é atualizada a cada iteração.
 
-</dev>
-<dev>
+</div>
+
+<div>
 
 ![h:450](img/for.svg)
 
-</dev>
-</dev>
+</div>
 
+</div>
 
 ---
 
-
 # Algoritmos e Programação II
 
-
 https://evandro-crr.github.io/alg2
-
 
 <!-- _footer: Evandro Chagas Ribeiro da Rosa -->
 <!-- _paginate: skip -->

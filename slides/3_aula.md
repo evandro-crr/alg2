@@ -688,23 +688,19 @@ void somar_linhas(const int matriz[][COLUNAS], int resultado[], int linhas) {
 
 ```cpp
 int main() {
-    int matriz[][5] = {
-        {12, 24, 32, 21, 42},
-        {14, 67, 87, 65, 90},
-        {19, 1, 24, 12, 8}
-    };
-    int media_linhas[3];
-    int media_colunas[5];
+    int matriz[][...] = ...;
+    int media_linhas[...];
+    int media_colunas[...];
 
-    calcular_media_linhas(matriz, media_linhas, 3);
-    calcular_media_colunas(matriz, media_colunas, 3);
+    calcular_media_linhas(matriz, media_linhas, ...);
+    calcular_media_colunas(matriz, media_colunas, ...);
 
     std::cout << "Valor médio das linhas\n";
-    print_array(media_linhas, 3);
+    print_array(media_linhas, ...);
     std::cout << "Valor médio das colunas\n";
-    print_array(media_colunas, 5);
+    print_array(media_colunas, ...);
     std::cout << "Valor médio da matriz\n";
-    std::cout << calcular_media_matriz(matriz, 3, 5) << '\n';
+    std::cout << calcular_media_matriz(matriz, ...) << '\n';
 
     return 0;
 }

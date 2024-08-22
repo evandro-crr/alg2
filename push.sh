@@ -11,3 +11,4 @@ npx @marp-team/marp-cli@latest index.md -o public/index.html --html 1
 cp listas/*pdf public/listas
 cp slides/img public/slides/ -r
 pipx run ghp-import public -p -o
+echo https://evandro-crr.github.io/alg2

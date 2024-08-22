@@ -482,9 +482,7 @@ int main() {
     std::cout << "media(5, 2) = "
               << media(5, 2) << "\n"
               << "media(5.0, 2.0) = "
-              << media(5.0, 2.0) <<
-
- "\n";
+              << media(5.0, 2.0) << "\n";
     return 0;
 }
 

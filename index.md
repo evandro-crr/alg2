@@ -16,6 +16,7 @@ header: https://evandro-crr.github.io/alg2
 - [Aula 1 : Revisão](slides/1_aula.html)
 - [Aula 2 : Funções](slides/2_aula.html)
     - [Lista de exercícios](listas/1_lista.pdf) 
+- [Aula 3: Array](slides/3_aula.html)
 
 
 

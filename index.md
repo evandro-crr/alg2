@@ -9,7 +9,7 @@ footer: Evandro Chagas Ribeiro da Rosa
 header: https://evandro-crr.github.io/alg2
 ---
 
-![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://evandro-crr.github.io/alg2)
+![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://www.programiz.com/cpp-programming/online-compiler)
 
 **Algoritmos e Programação II**
 
@@ -17,6 +17,8 @@ header: https://evandro-crr.github.io/alg2
 - [Aula 2 : Funções](slides/2_aula.html)
     - [Lista de exercícios](listas/1_lista.pdf) 
 - [Aula 3: Array](slides/3_aula.html)
+    - [Lista de exercícios](listas/2_lista.pdf) 
+
 
 
 

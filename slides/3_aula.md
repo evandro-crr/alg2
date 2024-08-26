@@ -161,7 +161,7 @@ for (int item : lista) {
 ```cpp
 const int tamanho = 5;
 int lista1[tamanho] = {1, 2, 3, 4, 5};
-int lista2[tamanho] = {1, 2, 3, 4, 5};
+int lista2[tamanho];
 ```
 
 Como copiar os valores de `lista1` para `lista2`?
@@ -506,7 +506,7 @@ Qual o valor de `lista1`, `lista2` e `lista3`?
 ```cpp
 int lista1[4] = {1, 2, 3, 4};
 int lista2[4] = {4, 3, 2, 1};
-int lista3[5];
+int lista3[4];
 somar_array(lista1, lista2, lista3, 4);
 ```
 
@@ -517,7 +517,7 @@ somar_array(lista1, lista2, lista3, 4);
 ```cpp
 int lista1[4] = {1, 2, 3, 4};
 int lista2[4] = {4, 3, 2, 1};
-int lista3[5];
+int lista3[4];
 somar_array(lista1, lista2, lista1, 4);
 ```
 
@@ -717,6 +717,8 @@ Use a matriz abaixo no código:
 | 12  | 24  | 32  | 21  | 42  |
 | 14  | 67  | 87  | 65  | 90  |
 | 19  | 1   | 24  | 12  | 8   |
+
+![w:200](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://www.programiz.com/online-compiler/5P7wp25QMlSz4)
 
 </div>
 

@@ -1,0 +1,185 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large III Lista de Exercícios: Estruturas}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Código de Pessoa: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+      \item Responda sucintamente:
+            \begin{enumerate}
+                  \item O que é um tipo de dado primitivo?
+                  \item A declaração de estrutura cria automaticamente uma variável de estrutura?
+                  \item Tanto arrays quanto estruturas podem armazenar múltiplos valores. Qual é a diferença entre um array e uma estrutura?
+                  \item Veja o código abaixo:
+                        \begin{minted}{cpp}
+                        struct Cidade {  
+                              std::string nome_cidade; 
+                              std::string nome_estado; 
+                              double populacao; 
+                              double altitude; 
+                        };
+                  
+                        Cidade c = {
+                              "São José",
+                              "Santa Catarina",
+                              270299
+                        };
+                        \end{minted}
+                        \begin{enumerate}
+                              \item Qual valor está armazenado em \texttt{c.nome\_cidade}?
+                              \item Qual valor está armazenado em \texttt{c.nome\_estado}?
+                              \item Qual valor está armazenado em \texttt{c.populacao}?
+                              \item Qual valor está armazenado em \texttt{c.altitude}?
+                        \end{enumerate}
+                  \item Marque com verdadeiro (V) ou falso (F):
+                        \begin{description}
+                              \item[($\phantom{....}$)] É necessário um ponto e vírgula após a chave de fechamento de uma declaração de estrutura ou união.
+                              \item[($\phantom{....}$)] Uma declaração de estrutura cria uma variável.
+                              \item[($\phantom{....}$)] O conteúdo de uma variável de estrutura pode ser exibido passando a variável de estrutura para o \texttt{cout}.
+                              \item[($\phantom{....}$)] Em uma lista de inicialização de variáveis de uma estrutura, não é necessário fornecer inicializadores para todos os membros.
+                              \item[($\phantom{....}$)] Você pode pular membros em uma lista de inicialização de uma estrutura.
+                              \item[($\phantom{....}$)] A seguinte expressão se refere ao elemento 5 no array:  \texttt{info\_carro.modelo[5]}
+                              \item[($\phantom{....}$)] Uma variável membro de uma estrutura pode ser passada como argumento para uma função.
+                              \item[($\phantom{....}$)] Uma função pode retornar uma estrutura.
+                        \end{description}
+            \end{enumerate}
+
+      \item Os códigos abaixo possuem um ou mais erros. Indique quais são:
+            \begin{enumerate}
+                  \item \begin{minted}{cpp}
+      struct {
+            int x; 
+            float y;
+      };
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct Valores { 
+            std::string nome;
+            int idade;
+      }
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct DoisValores {  
+            int a, b;
+      }; 
+      
+      int main () {  
+            DoisValores.a = 10; 
+            DoisValores.b = 20; 
+            return 0;
+      }
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct TresValores {
+            int a, b, c; 
+      }; 
+      
+      int main() {
+            TresValores valores = {1, 2, 3};
+            std::cout << valores << std::endl; 
+            return 0;
+      }
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct Nomes {  
+            std::string primeiro; 
+            std::string ultimo; 
+      }; 
+      int main () {  
+            Nomes cliente = "John", "Neumann";
+            std::cout << cliente.primeiro << std::endl;
+            std::cout << cliente.ultimo << std::endl;
+            return 0;
+      }
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct QuatroValores {  
+            int a, b, c, d; 
+      }; 
+      int main () {  
+            QuatroValores numeros = {1, 2, , 4}; 
+            return 0; 
+      }
+                  \end{minted}
+                  \item \begin{minted}{cpp}
+      struct DoisValores {  
+            int a; 
+            int b; 
+      };
+
+      int main() { 
+            DoisValores vetor[10];  
+            vetor.a[0] = 1; 
+            return 0;
+      }
+                  \end{minted}
+            \end{enumerate}
+
+            \item Escreva um programa que simula o funcionamento de uma máquina de refrigerantes. O programa deve utilizar uma estrutura para armazenar os seguintes dados sobre cada refrigerante:
+            \begin{itemize}
+                \item O nome do refrigerante (ex.: "Cola", "Laranja").
+                \item O preço de uma lata de refrigerante.
+                \item O número de latas de refrigerante disponíveis na máquina.
+            \end{itemize}
+            
+            O programa deve funcionar da seguinte forma:
+            \begin{enumerate}
+                \item Permitir que o usuário cadastre até cinco tipos diferentes de refrigerantes, informando o nome, o preço e a quantidade disponível de cada um.
+                \item Após a inicialização da máquina, o programa deve entrar em um loop onde:
+                \begin{itemize}
+                    \item A máquina exibe uma lista dos refrigerantes disponíveis.
+                    \item O cliente seleciona um refrigerante e informa o valor em dinheiro inserido na máquina.
+                    \item A máquina calcula e exibe o troco, subtrai uma unidade da quantidade de latas disponíveis e, se o refrigerante estiver esgotado, exibe uma mensagem de aviso.
+                    \item O processo repete até que o cliente decida encerrar o programa.
+                \end{itemize}
+                \item Ao final do programa, exiba o total arrecadado pela máquina.
+            \end{enumerate}
+            
+            \textbf{Validação de Entrada:} O programa deve garantir que:
+            \begin{itemize}
+                \item O preço e a quantidade de latas de refrigerante não sejam valores negativos.
+                \item O valor inserido pelo cliente não seja negativo ou maior que R\$10,00.
+            \end{itemize}
+            
+            \item Escreva um programa que utiliza uma estrutura para armazenar as seguintes informações sobre uma conta de cliente:
+            \begin{itemize}
+                \item Nome completo do cliente.
+                \item CPF do cliente.
+                \item Endereço inclui Cidade, Estado e CEP.
+                \item Telefone de contato do cliente.
+                \item O saldo atual na conta do cliente.
+            \end{itemize}
+            
+            O programa deve utilizar um array contendo, no mínimo, 10 estruturas de contas de clientes e oferecer uma interface de usuário baseada em menus que permita ao usuário:
+            \begin{enumerate}
+                \item Adicionar uma nova conta de cliente.
+                \item Remover uma conta existente.
+                \item Listar todas as contas cadastradas.
+                \item Imprimir todos os dados de um cliente específico.
+                \item Atualizar os dados de uma conta de cliente.
+            \end{enumerate}
+            
+            \textbf{Validação de Entrada:} O programa deve garantir que:
+            \begin{itemize}
+                \item Todos os campos sejam preenchidos ao adicionar uma nova conta.
+                \item Não sejam inseridos saldos negativos para as contas.
+            \end{itemize}
+            
+\end{enumerate}
+
+
+
+\end{document}

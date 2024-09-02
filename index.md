@@ -26,6 +26,8 @@ footer: Evandro Chagas Ribeiro da Rosa
 - [Aula 3: Array](slides/3_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/3_aula.pdf)
     - [Lista de exercícios](listas/2_lista.pdf) 
 - [Aula 4: Struct](slides/4_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/4_aula.pdf)
+    - [Lista de exercícios](listas/3_lista.pdf) 
+
 
 
 

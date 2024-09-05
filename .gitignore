@@ -8,3 +8,5 @@ listas/*.synctex.gz
 main*
 .vscode/tasks.json
 slides/*.pdf
+slides/*.html
+index.html

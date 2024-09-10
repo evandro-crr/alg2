@@ -28,8 +28,16 @@ footer: Evandro Chagas Ribeiro da Rosa
 - [Aula 4: Struct](slides/4_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/4_aula.pdf)
     - [Lista de exercícios](listas/3_lista.pdf) 
 
+---
 
 
+![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://evandro-crr.github.io/alg2)
 
 
+[evandro-crr.github.io/alg2](https://evandro-crr.github.io/alg2)
+
+
+**Algoritmos e Programação II**
+
+- [Aula 5 : Alocação Dinâmica](slides/5_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
 

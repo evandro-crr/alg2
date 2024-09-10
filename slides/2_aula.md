@@ -386,7 +386,7 @@ int main() {
 
 ---
 
-# Pesagem de Valor por Referência    
+# Argumento por Referência    
 
 <div class="columns">
 

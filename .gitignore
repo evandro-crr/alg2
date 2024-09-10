@@ -10,3 +10,6 @@ main*
 slides/*.pdf
 slides/*.html
 index.html
+prova/
+slides/img/.*.bkp
+a.out

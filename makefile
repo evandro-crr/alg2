@@ -16,9 +16,10 @@ all: html pdf index.html
 
 deploy: all
 	mkdir -p public/listas
-	mkdir -p public/slides
+	mkdir -p public/slides/img
 	cp listas/*.pdf public/listas/
-	cp slides/*.{html,pdf} public/slides/ -r
+	cp slides/*.{html,pdf} public/slides/
+	cp slides/img/*.svg public/slides/img/
 	cp index.html public/
 	pipx run ghp-import public -p -o
 	echo https://evandro-crr.github.io/alg2

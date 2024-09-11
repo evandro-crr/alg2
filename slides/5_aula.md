@@ -223,8 +223,10 @@ int main() {
 </div>
 <div>
 
-- `*(ptr + i)` é equivalente a `ptr[i]`.
-- `ptr + i` retorna `ptr + i * sizeof(int)`.
+- `*(ptr + i)` é
+  equivalente a `ptr[i]`.
+- `ptr + i` retorna
+  `ptr + i * sizeof(int)`.
 
 </div>
 </div>
@@ -327,6 +329,8 @@ int main() {
 
 $\phantom{.}$
 
+
+
 - Nem sempre é possível saber a quantidade de memória necessária em tempo de compilação.
 - Podemos usar a instrução `new` para alocar memória.
 - É necessário usar a instrução `delete` para liberar a memória.
@@ -358,14 +362,370 @@ int main() {
 </div>
 <div>
 
-- Toda memória alocada com `new` DEVE ser desalocada com `delete`.
+- Toda memória alocada com `new` **DEVE** ser desalocada com `delete`.
 - Se alocarmos memória sem desalocar, eventualmente, faltará memória.
 
 </div>
 </div>
 
-Memory leak é um bug comum em diversos softwares, incluindo jogos. Existem ferramentas para detectar memory leaks e o C++ oferece maneiras de evitar esse problema.
+Memory leak é um bug comum em diversos softwares, incluindo jogos. Existem ferramentas para detectar memory leaks e
+o C++ oferece maneiras de evitar esse problema.
 
 ---
 
+## Ponteiro para Estrutura
+
+<div class="columns">
+<div>
+
+```cpp
+struct Pessoa {
+    string nome;
+    int idade;
+};
+
+int main() {
+    Pessoa pessoa = {"Luiza", 32};
+    Pessoa *ptr = &pessoa;
+
+    cout << ptr->nome << "\n"
+         << (*ptr).idade << "\n";
+}
+```
+
+</div>
+<div>
+
+Podemos acessar os membros de um ponteiro para `struct`:
+
+1. Usando o operador de ponteiro `->`.
+2. Desreferenciando o ponteiro seguido do operador ponto.
+
+</div>
+</div>
+
+O operador ponto (`.`) tem maior precedência
+do  que o operador de indireção (`*`).
+
+
+---
+
+## Alocação dinâmica de Estrutura 
+
+<div class="columns">
+<div>
+
+```cpp
+int main() {
+    Pessoa *pessoa1 = new Pessoa;
+    Pessoa *pessoa2 = new Pessoa{"Luiza", 20};
+
+    cout << pessoa1->nome << "\n"
+         << (*pessoa1).idade << "\n";
+    cout << pessoa2->nome << "\n"
+         << (*pessoa2).idade << "\n";
+
+    delete pessoa1;
+    delete pessoa2;
+}
+```
+
+</div>
+<div>
+
+- O operador `new` sempre inicializa a memória.
+- É possível passar uma lista de inicialização ao alocar a estrutura dinamicamente.
+
+</div>
+</div>
+
+---
+
+## Função que retorna ponteiro
+
+Uma função pode retornar um ponteiro,
+mas é preciso ter cuidado com os seguintes casos:
+
+<div class="columns">
+<div>
+
+### ✅ Casos válidos
+
+- Retornar um ponteiro passado como argumento.
+- Retornar um ponteiro para memória alocada dinamicamente dentro da função.
+
+</div>
+<div>
+
+### ❌ Casos inválidos
+
+- Retornar a referência de variáveis locais.
+- Retornar um ponteiro para uma memória que já foi desalocada.
+
+</div>
+</div>
+
+---
+
+## Função que retorna ponteiro
+
+<div class="columns">
+<div>
+
+```cpp
+struct Pessoa {
+    string nome;
+    int idade;
+};
+
+Pessoa *mais_velho(Pessoa *a, Pessoa *b) {
+    if (a->idade > b->idade) {
+        return a;
+    }
+    return b;
+}
+
+int main() {
+    Pessoa leo = {"Leo", 32};
+    Pessoa bob = {"Bob", 19};
+
+    Pessoa *pessoa = mais_velho(&leo, &bob);
+
+    cout << pessoa->nome << " é mais velho\n";
+}
+```
+
+</div>
+<div>
+
+
+$\phantom{.}$
+
+$\phantom{.}$
+
+Receber e retornar um ponteiro pode evitar a necessidade de novas alocações de memória, otimizando o uso de recursos.
+
+</div>
+</div>
+
+---
+
+## Função que retorna ponteiro
+
+<div class="columns">
+<div>
+
+```cpp
+int *clonar_lista(const int lista[], int tamanho) {
+    int *nova_lista = new int[tamanho];
+    for (int i = 0; i < tamanho; i++) {
+        nova_lista[i] = lista[i];
+    }
+    return nova_lista;
+}
+
+int main() {
+    int numeros[5] = {9, 8, 7, 6};
+    int *clone = clonar_lista(numeros, 5);
+    for (int i = 0; i < 5; i++) {
+        cout << i << ":" << clone[i] << ", ";
+    }
+    cout << "\n";
+
+    delete[] clone;
+}
+```
+
+</div>
+<div>
+
+$\phantom{.}$
+
+Funções podem retornar memória alocada dinamicamente. É importante garantir que essa memória seja desalocada posteriormente.
+
+</div>
+</div>
+
+---
+
+## Como **NÃO** retornar ponteiro ❌
+
+<div class="columns">
+<div>
+
+```cpp
+struct Pessoa {
+    string nome;
+    int idade;
+};
+
+Pessoa *mais_velho(Pessoa &a, Pessoa &b) {
+    Pessoa p;
+    if (a.idade > b.idade) {
+        p = a;
+    }
+    p = b;
+    return &p;
+}
+
+int main() {
+    Pessoa leo = {"Leo", 32};
+    Pessoa bob = {"Bob", 19};
+
+    Pessoa *pessoa = mais_velho(leo, bob);
+
+    cout << pessoa->nome << " é mais velho\n";
+}
+```
+
+</div>
+<div>
+
+$\phantom{.}$
+
+$\phantom{.}$
+
+
+Não retorne o endereço de memória de variáveis locais, pois elas são destruídas quando a função retorna. O compilador geralmente alerta sobre esse problema.
+
+</div>
+</div>
+
+---
+
+## Como **NÃO** retornar ponteiro ❌
+
+<div class="columns">
+<div>
+
+```cpp
+int *clonar_lista(const int lista[], int tamanho) {
+    int *nova_lista = new int[tamanho];
+    for (int i = 0; i < tamanho; i++) {
+        nova_lista[i] = lista[i];
+    }
+    delete[] nova_lista;
+    return nova_lista;
+}
+
+int main() {
+    int numeros[5] = {9, 8, 7, 6};
+    int *clone = clonar_lista(numeros, 5);
+    for (int i = 0; i < 5; i++) {
+        cout << i << ":" << clone[i] << ", ";
+    }
+    cout << "\n";
+
+    delete[] clone;
+}
+```
+
+</div>
+<div>
+
+$\phantom{.}$
+
+
+
+Não retorne um ponteiro para um endereço de memória que já foi desalocado. Não é possível desalocar a mesma posição de memória mais de uma vez.
+
+</div>
+</div>
+
+---
+
+### ⚙️ Exercício (continua ➡️)
+
+Desenvolva um sistema para gerenciar o cadastro de produtos.
+
+<div class="columns">
+<div>
+
+**Informações do produto**
+
+- Código do produto
+- Nome do produto
+- Quantidade em estoque
+- Preço unitário
+
+</div>
+<div>
+
+1. Crie uma estrutura para armazenar as informações.
+2. Crie uma função para receber os dados do produto.
+3. Crie uma função que exiba as informações de um produto.
+4. Crie uma lista usando alocação dinâmica e exiba as informações dos produtos.
+
+</div>
+</div>
+
+---
+
+<div class="columns">
+<div>
+
+**Código Base:**
+
+```cpp
+#include <iostream>
+
+struct Produto;
+
+Produto registrar_produto();
+void imprimir_relatorio(...);
+
+int main() {
+    int quantidade = 3;
+    Produto *produtos;
+    // alocar produtos
+
+    // Registre os produtos
+    for (int i = 0; i < quantidade; i++) {
+        ...
+    }
+
+    std::cout << "Relatório de Produtos\n";
+    for (int i = 0; i < quantidade; i++) {
+        imprimir_relatorio(...);
+    }
+
+    // desalocar produtos
+    return 0;
+}
+```
+
+</div>
+<div>
+
+**Exemplo de Saída Esperada:**
+
+```
+Código do produto: 101
+Nome do produto: Caneta Azul
+Quantidade em estoque: 200
+Preço unitário: 1.50
+
+Código do produto: 102
+Nome do produto: Caderno
+Quantidade em estoque: 150
+Preço unitário: 5.75
+
 ...
+
+Relatório de Produtos:
+Código: 101 | Nome: Caneta Azul | Quantidade: 200 | Preço: 1.5 | Valor Total: 300
+Código: 102 | Nome: Caderno | Quantidade: 150 | Preço: 5.75 | Valor Total: 862.5
+...
+```
+
+![w:300](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://www.programiz.com/online-compiler/4BTrRjrQvFBlc)
+
+
+</div>
+</div>
+
+---
+
+# Algoritmos e Programação II
+
+https://evandro-crr.github.io/alg2

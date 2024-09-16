@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large IV Lista de Exercícios: Ponteiros}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Código de Aluno: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+    \item Responda sucintamente:
+        \begin{enumerate}
+            \item O que faz o operador de desreferência (\texttt{*})?
+            \item Veja o código a seguir:
+                \begin{minted}{cpp}
+int x = 7;
+int *iptr = &x; 
+                \end{minted}
+                \begin{enumerate}
+                  \item O que será exibido se você enviar a expressão \texttt{*iptr} para \texttt{cout}?
+                  \item E se você enviar a expressão \texttt{iptr} para \texttt{cout}?
+                \end{enumerate}
+            \item Quais operações matemáticas são permitidas com ponteiros?
+            \item Qual é a finalidade do operador \texttt{new}?
+            \item Qual é a finalidade do operador \texttt{delete}?
+            \item Em quais circunstâncias é possível retornar um ponteiro de uma função?
+        \end{enumerate}
+
+    \item Os códigos abaixo contêm um ou mais erros. Indique quais são:
+    \begin{enumerate}
+      \item \begin{minted}{cpp}
+  int ptr = nullptr;                  
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int x, *ptr = nullptr; 
+  &x = ptr;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int x, *ptr = nullptr;
+  *ptr = &x;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int x, *ptr = nullptr;
+  ptr = &x;
+  ptr = 100; // Armazena 100 em x  
+  cout << x << endl;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int numeros[] = {10, 20, 30, 40, 50};
+  cout << "O terceiro elemento do array é ";
+  cout << *numeros + 3 << endl;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int valores[20], *ponteiro_int = nullptr;
+  ponteiro_int = valores;
+  ponteiro_int *= 2;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  float nivel;
+  int ponteiro_float = &nivel;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int *ponteiro_int = &numero;
+  int numero;
+      \end{minted}
+      \item \begin{minted}{cpp}
+  void dobrar_valor(int valor)  {
+      *valor *= 2;
+  }
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int *ponteiro_int = nullptr; 
+  ponteiro_int = new int[100]; // Aloca memória
+  delete ponteiro_int; // Libera memória
+      \end{minted}
+      \item \begin{minted}{cpp}
+  int *obter_numero()  {
+      int numero;  
+      cout << "Digite um número: "; 
+      cin >> numero; 
+      return &numero;  
+  }
+      \end{minted}
+      \item \begin{minted}{cpp}
+  struct TresValores {  
+      int a, b, c; 
+  };
+  int main () {  
+      TresValores s, *s_ponteiro = nullptr; 
+      s_ponteiro = &s; 
+      *s_ponteiro.a = 1; 
+      return 0;
+  }
+      \end{minted}
+  \end{enumerate}
+  
+
+    \item Em estatística, a moda de um conjunto de valores é o valor que ocorre com maior frequência. Escreva uma função que aceite os seguintes argumentos: 
+    \begin{itemize}
+      \item Um array de inteiros
+      \item Um inteiro que indica o número de elementos no array
+    \end{itemize}
+    A função deve determinar a moda do array, ou seja, qual valor no array ocorre com mais frequência. A moda é o valor que a função deve retornar. Se o array não tiver moda (nenhum valor ocorre mais de uma vez), a função deve retornar -1 -- Assuma que o array sempre conterá valores positivos. Demonstre a função em um programa completo.
+
+    \item Escreva uma função que aceite um array de inteiros e o tamanho do array como argumentos. A função deve criar uma cópia do array, exceto que os valores dos elementos devem ser invertidos na cópia. A função deve retornar um ponteiro para o novo array. Demonstre a função em um programa completo.
+    
+    \item Escreva uma função que aceite um array de inteiros e o tamanho do array como argumentos. A função deve criar um novo array que seja o dobro do tamanho do array argumento. A função deve copiar o conteúdo do array argumento para o novo array e inicializar os elementos não utilizados do segundo array com 0. A função deve retornar um ponteiro para o novo array. Demonstre a função em um programa completo.
+
+    \item Escreva um programa que aloca dinamicamente um array grande o suficiente para armazenar uma quantidade de notas fornecida pelo usuário. Após a inserção de todas as notas (de 0 a 10), o array deve ser passado para uma função que as ordena em ordem crescente. Outra função deve ser chamada para calcular a média das notas. O programa deve exibir a lista ordenada de notas e a média com títulos apropriados. 
+
+    \item Modifique o problema acima para que a menor nota seja descartada. Essa nota não deve ser incluída no cálculo da média.
+
+    \item Modifique o programa do problema acima para permitir que o usuário insira pares nome-nota. Para cada aluno que fizer uma prova, o usuário deve digitar o nome do aluno seguido pela nota da prova do aluno. Modifique a função de ordenação para que ela aceite um array contendo os nomes dos alunos e um array contendo as notas dos testes dos alunos. Quando a lista ordenada de notas for exibida, o nome de cada aluno deve ser exibido junto com sua nota.
+
+
+    \item Escreva um programa que use uma estrutura para armazenar os seguintes dados:
+        \begin{itemize}
+            \item nome: Nome do aluno
+            \item notas: Ponteiro para um array de notas
+            \item media: Média das notas
+        \end{itemize}
+        O programa deve manter uma lista de notas para um grupo de alunos. Deve perguntar ao usuário quantas notas há e quantos alunos existem. Em seguida, deve alocar dinamicamente um array de estruturas. O membro \texttt{notas} de cada estrutura deve apontar para um array alocado dinamicamente que conterá as notas. Após a alocação dinâmica dos arrays, o programa deve solicitar o nome e todas as notas para cada aluno. A média das notas deve ser calculada e armazenada no membro \texttt{media} de cada estrutura. Depois que todos esses dados forem calculados, uma tabela deve ser exibida na tela listando o nome de cada aluno e a média das notas. 
+
+        \textbf{Validação de Entrada}: Não aceite números negativos para nenhuma nota.
+
+\end{enumerate}
+
+\end{document}

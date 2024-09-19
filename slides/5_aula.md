@@ -729,3 +729,6 @@ Código: 102 | Nome: Caderno | Quantidade: 150 | Preço: 5.75 | Valor Total: 862
 # Algoritmos e Programação II
 
 https://evandro-crr.github.io/alg2
+
+<!-- _footer: Evandro Chagas Ribeiro da Rosa -->
+<!-- _paginate: skip -->

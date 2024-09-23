@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large V Lista de Exercícios: C-String}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Código de Aluno: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+  \item Responda sucintamente:
+    \begin{enumerate}
+      \item Observe o seguinte código. Qual valor será armazenado em \texttt{s} após a execução do código?
+        \begin{minted}{cpp}
+char nome[10];
+int s;
+strcpy(nome, "Jimmy");
+s = strlen(nome);
+        \end{minted}
+      \item A seguinte instrução \texttt{if} determina se \texttt{escolha} é igual a 'S' ou 's':
+        \begin{minted}{cpp}
+if (escolha == 'S' || escolha == 's')
+        \end{minted}
+        Como simplificar essa instrução?
+      \item Marque com verdadeiro (V) ou falso (F):
+        \begin{description}
+          \item[($\phantom{....}$)] Funções de teste de caracteres, como \texttt{isupper}, aceitam strings como argumento e testam cada caractere na string.
+          \item[($\phantom{....}$)] Se o argumento da função \texttt{toupper} já estiver em maiúsculas, ele será retornado como está, sem alterações.
+          \item[($\phantom{....}$)] A função \texttt{strlen} retorna o tamanho do array que contém a string.
+          \item[($\phantom{....}$)] Se o endereço inicial de uma C-string for passado como parâmetro ponteiro, pode-se assumir que todos os caracteres, desde esse endereço até o byte que contém o terminador nulo (\mintinline{cpp}{'\0'}), fazem parte da string.
+          \item[($\phantom{....}$)] A função \texttt{strcat} verifica se a primeira string é grande o suficiente para conter ambas as strings antes de realizar a concatenação.
+          \item[($\phantom{....}$)] A função \texttt{strcpy} não realiza verificação de limites no primeiro argumento.
+          \item[($\phantom{....}$)] Não há diferença entre \texttt{"847"} e \texttt{847}.
+        \end{description}
+
+    \end{enumerate}
+
+  \item Os códigos abaixo contêm um ou mais erros. Indique quais são:
+    \begin{enumerate}
+      \item
+        \begin{minted}{cpp}
+char str[] = "Pare";
+if (isupper(str) == "PARE")
+    exit(0);
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+char numerico[5];
+int x = 123;
+numerico = atoi(x);
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+char string1[] = "Billy";
+char string2[] = " Bob Jones";
+strcat(string1, string2);
+        \end{minted}
+    \end{enumerate}
+
+  \item Escreva uma função que aceite um ponteiro para uma C-string como argumento e exiba seu conteúdo de trás para frente. Por exemplo, se o argumento da string for "Gravidade", a função deverá exibir "edadivarG". Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função.
+
+  \item Escreva uma função que aceite um ponteiro para uma C-string como argumento e reverta seu conteúdo. Por exemplo, se o argumento da string for "Gravidade", a função deverá alterá-la para "edadivarG". Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função.
+
+  \item Escreva uma função que aceite um ponteiro para uma C-string como argumento e retorne o número de palavras contidas na string. Por exemplo, se o argumento da string for ``O rato roeu a roupa do rei de Roma'', a função deverá retornar o número 9. Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função. O número de palavras na string deverá ser exibido na tela.
+
+  \item Escreva uma função que aceite um ponteiro para uma C-string como argumento e retorne o número médio de letras em cada palavra contida na string. Por exemplo, se o argumento da string for ``O rato roeu a roupa do rei de Roma'', a função deverá retornar o número 2.88. Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função. O número de palavras na string deverá ser exibido na tela.
+
+  \item Escreva uma função que aceite um ponteiro para uma C-string como argumento e capitalize o primeiro caractere de cada sentença na string. Por exemplo, se o argumento da string for "olá. meu nome é João. qual é o seu nome?", a função deverá manipular a string para conter "Olá. Meu nome é João. Qual é o seu nome?". Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função. A string modificada deverá ser exibida na tela.
+
+  \item Escreva um programa que solicite ao usuário que insira um número. Leia a entrada como uma C-string ou um objeto string. O programa deverá converter o número em um \texttt{int}. Demonstre a função em um programa que solicita ao usuário que insira uma string e, em seguida, passe-a para a função.
+
+  \item Escreva uma função que aceite como argumento um ponteiro para uma C-string, ou um objeto string, e retorne o caractere que aparece com mais frequência na string. Demonstre a função em um programa completo.
+
+  \item Imagine que você está desenvolvendo um pacote de software que exige que os usuários insiram suas próprias senhas. Seu software exige que as senhas dos usuários atendam aos seguintes critérios:
+    \begin{itemize}
+      \item A senha deve ter pelo menos seis caracteres.
+      \item A senha deve conter pelo menos uma letra maiúscula e pelo menos uma letra minúscula.
+      \item A senha deve conter pelo menos um dígito.
+    \end{itemize}
+    Escreva um programa que solicite uma senha e depois verifique se ela atende aos critérios estabelecidos. Caso não atenda, o programa deve exibir uma mensagem informando ao usuário o motivo.
+
+  \item Escreva um programa que aceite como entrada uma frase na qual todas as palavras estejam juntas, mas o primeiro caractere de cada palavra esteja em maiúsculas. Converta a frase em uma string na qual as palavras sejam separadas por espaços e apenas a primeira palavra comece com uma letra maiúscula. Por exemplo, a string ``PareEObserveAsRosas''. deve ser convertida para ``Pare e observe as rosas''.
+
+\end{enumerate}
+
+\end{document}

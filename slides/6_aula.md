@@ -340,8 +340,8 @@ int strcmp_custom(
 
 ## String em C++ `std::string`
 
-* A classe `std::string` da biblioteca padrão do C++ permite a manipulação de strings de forma dinâmica e segura. 
-* Diferente das C-strings, o `std::string` abstrai a alocação de memória e manipulação de ponteiros.
+- A classe `std::string` da biblioteca padrão do C++ permite a manipulação de strings de forma dinâmica e segura. 
+- Diferente das C-strings, o `std::string` abstrai a alocação de memória e manipulação de ponteiros.
 
 
 **Vantagens do `std::string`**

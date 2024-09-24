@@ -39,8 +39,8 @@ footer: Evandro Chagas Ribeiro da Rosa
 
 **Algoritmos e Programação II**
 
-- [Aula 5 : Alocação Dinâmica](slides/5_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
+- [Aula 5: Alocação Dinâmica](slides/5_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
     - [Lista de exercícios](listas/4_lista.pdf) 
-- [Aula 6 : C-String](slides/6_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/6_aula.pdf)
+- [Aula 6: C-String](slides/6_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/6_aula.pdf)
     - [Lista de exercícios](listas/5_lista.pdf) 
-
+- [Aula 7: Introdução a Classes](slides/7_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/7_aula.pdf)

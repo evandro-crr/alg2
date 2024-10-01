@@ -44,3 +44,4 @@ footer: Evandro Chagas Ribeiro da Rosa
 - [Aula 6: C-String](slides/6_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/6_aula.pdf)
     - [Lista de exercícios](listas/5_lista.pdf) 
 - [Aula 7: Introdução a Classes](slides/7_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/7_aula.pdf)
+    - [Lista de exercícios](listas/6_lista.pdf) 

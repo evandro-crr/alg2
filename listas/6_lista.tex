@@ -1,0 +1,197 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large VI Lista de Exercícios: Introdução a Classes}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Código de Aluno: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+  \item Responda sucintamente:
+    \begin{enumerate}
+      \item Qual é a diferença entre uma classe e uma instância da classe?
+      \item Qual é a diferença entre a estrutura \texttt{Pessoa} e a classe \texttt{Pessoa}, como mostrado abaixo?
+      
+        \begin{minipage}{.3\linewidth}
+          \begin{minted}{cpp}
+struct Pessoa {
+    string nome;
+    int idade;
+};
+          \end{minted}
+        \end{minipage}
+        \begin{minipage}{.3\linewidth}
+          \begin{minted}{cpp}
+class Pessoa {
+    string nome;
+    int idade;
+};
+          \end{minted}
+        \end{minipage}
+
+      \item Qual é a especificação de acesso padrão dos membros de uma classe?
+      \item Veja a definição da seguinte função membro:\\ \mintinline{cpp}|void Circulo::obterRaio()|
+        \begin{enumerate}
+          \item Qual é o nome da função?
+          \item De qual classe a função é membro?
+        \end{enumerate}
+      \item É uma boa ideia tornar as variáveis membros privadas?
+      \item Em quais circunstâncias uma função membro deve ser privada?
+      \item O que é um construtor? O que é um destrutor?
+      \item O que é um construtor padrão? É possível ter mais de um construtor padrão?
+      \item É possível ter mais de um construtor? E mais de um destrutor?
+    \end{enumerate}
+
+  \item Os códigos abaixo contêm um ou mais erros. Indique quais são:
+    \begin{enumerate}
+      \item
+        \begin{minted}{cpp}
+class Circulo: {
+    private
+        double centroX;
+        double centroY;
+        double raio;
+    public
+        definirCentro(double, double);
+        definirRaio(double);
+}
+        \end{minted}
+
+        \newpage
+      \item
+        \begin{minted}{cpp}
+#include <iostream>
+using namespace std;
+
+class Haltere;
+{
+    int peso;
+
+  public:
+    void definirPeso(int);
+};
+
+void definirPeso(int p) { peso = p; }
+
+int main() {
+    Haltere barra;
+    Haltere(200);
+    cout << "O peso é " << barra.peso << endl;
+    return 0;
+}
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+class Troco {
+  public:
+    int centavos;
+    int cinco_centavos;
+    int dez_centavos;
+    int vinte_cinco_centavos;
+    Troco() {
+        centavos = cincoCentavos = dezCentavos = vinteCincoCentavos = 0;
+    }
+    Troco(int c = 100, int cc = 50, d = 50, vcc = 25);
+};
+
+void Troco::Troco(int c, int cc, d, vcc) {
+    centavos = c;
+    cincoCentavos = cc;
+    dezCentavos = d;
+    vinteCincoCentavos = vcc;
+}
+        \end{minted}
+    \end{enumerate}
+
+  \item Crie uma classe chamada \texttt{Data}. A classe deve armazenar uma data em três inteiros: mês, dia e ano. Devem haver funções membros para imprimir a data nos seguintes formatos:
+    \begin{itemize}
+      \item 25/12/2024
+      \item 25 de dezembro de 2024
+    \end{itemize}
+    Demonstre a classe escrevendo um programa completo que a implemente. Validação de entrada: Não aceite valores para o dia maiores que 31 ou menores que 1. Não aceite valores para o mês maiores que 12 ou menores que 1.
+
+  \item Crie uma classe chamada \texttt{Estoque} que armazene informações e calcule dados sobre itens no inventário de uma loja. A classe deve ter as seguintes variáveis privadas:
+
+    \begin{tabular}{|l|p{.7\linewidth}|}
+      \hline
+      Nome da Variável & Descrição \\
+      \hline
+      \texttt{codigo\_item} & Um int que armazena o código do item. \\
+      \texttt{quantidade} & Um int que armazena a quantidade de itens em estoque. \\
+      \texttt{custo} & Um double que armazena o custo por unidade do item. \\
+      \texttt{custo\_total} & Um double que armazena o custo total do item (calculado como quantidade vezes custo). \\
+      \hline
+    \end{tabular}
+
+    A classe deve ter as seguintes funções públicas:
+    \begin{itemize}
+      \item Construtor Padrão: Define todas as variáveis membro como 0.
+      \item Construtor: Aceita como argumentos o código, o custo e a quantidade de um item. A função deve copiar esses valores para as variáveis membro apropriadas e então chamar a função \texttt{definir\_custo\_total}.
+      \item \texttt{definir\_codigo\_item}: Aceita um argumento do tipo inteiro que é copiado para a variável membro \texttt{codigo\_item}.
+      \item \texttt{definir\_quantidade}: Aceita um argumento do tipo inteiro que é copiado para a variável membro quantidade.
+      \item \texttt{definir\_custo}: Aceita um argumento do tipo double que é copiado para a variável membro custo.
+      \item \texttt{definir\_custo\_total}: Calcula o custo total do item no inventário (quantidade vezes custo) e armazena o resultado em \texttt{custo\_total}.
+      \item \texttt{obter\_codigo\_item}: Retorna o valor de \texttt{codigo\_item}.
+      \item \texttt{obter\_quantidade}: Retorna o valor de quantidade.
+      \item \texttt{obter\_custo}: Retorna o valor de custo.
+      \item \texttt{obter\_custo\_total}: Retorna o valor de \texttt{custo\_total}.
+    \end{itemize}
+    Demonstre a classe em um programa.
+
+    \textbf{Validação de Entrada}: Não aceite valores negativos para código, quantidade ou custo.
+
+  \item Crie uma classe chamada \texttt{NotasProva} que tenha variáveis membro para armazenar três notas de prova. A classe deve ter um construtor, funções de acesso e de modificação para as notas, e uma função membro que retorne a média das notas. Demonstre a classe escrevendo um programa separado que crie uma instância da classe e peça ao usuário para inserir três notas de prova, que devem ser armazenadas no objeto \texttt{NotasProva}. O programa deve exibir a média das notas, conforme relatado pelo objeto \texttt{NotasProva}.
+
+  \item Escreva uma classe chamada Círculo que tenha as seguintes variáveis de membro:
+    \begin{itemize}
+      \item \texttt{raio}: um \texttt{double}
+      \item \texttt{pi}: um \texttt{double} inicializado com o valor 3.14159
+    \end{itemize}
+    A classe deve ter as seguintes funções membro:
+    \begin{itemize}
+      \item Construtor Padrão: um construtor padrão que define o raio como 0.0.
+      \item Construtor: aceita o raio do círculo como argumento.
+      \item \texttt{set\_raio}: uma função mutadora para a variável raio.
+      \item \texttt{get\_raio}: uma função acessora para a variável raio.
+      \item \texttt{get\_area}: retorna a área do círculo, calculada como área $= \text{pi} \times \text{raio}^2$.
+      \item \texttt{get\_diametro}: retorna o diâmetro do círculo, calculado como diâmetro $= 2\text{raio}$.
+      \item \texttt{get\_circunferencia}: retorna a circunferência do círculo, calculada como circunferência $= 2\text{pi} \times \text{raio}$.
+    \end{itemize}
+    Escreva um programa que demonstre a classe Círculo, solicitando ao usuário o raio do círculo, criando um objeto Círculo e, em seguida, exibindo a área, o diâmetro e a circunferência do círculo.
+
+  \item Projete uma classe que tenha um array de números de ponto flutuante. O construtor deve aceitar um argumento inteiro e alocar dinamicamente o array para armazenar essa quantidade de números. O destrutor deve liberar a memória ocupada pelo array. Além disso, deve haver funções membro para realizar as seguintes operações:
+    \begin{itemize}
+      \item Armazenar um número em qualquer elemento do array
+      \item Recuperar um número de qualquer elemento do array
+      \item Retornar o maior valor armazenado no array
+      \item Retornar o menor valor armazenado no array
+      \item Retornar a média de todos os números armazenados no array
+    \end{itemize}
+    Demonstre a classe em um programa.
+
+  \item Escreva uma classe chamada \texttt{Moeda} que deve ter a seguinte variável membro:
+    \begin{itemize}
+      \item Uma string chamada \texttt{lado\_para\_cima} que deve armazenar ``cara'' ou ``coroa'', indicando qual lado da moeda está voltado para cima.
+    \end{itemize}
+    A classe Moeda deve ter as seguintes funções membro:
+    \begin{itemize}
+      \item Um construtor padrão que determina aleatoriamente qual lado da moeda está voltado para cima (``cara'' ou ``coroa'') e inicializa a variável \texttt{lado\_para\_cima} de acordo.
+      \item Uma função membro \texttt{jogar} que simula o lançamento da moeda. Quando a função \texttt{jogar} é chamada, ela determina aleatoriamente qual lado da moeda está voltado para cima e define a variável \texttt{lado\_para\_cima} de acordo.
+      \item Uma função membro chamada \texttt{get\_lado\_para\_cima} que retorna o valor da variável \texttt{lado\_para\_cima}.
+    \end{itemize}
+    Escreva um programa que demonstre a classe Moeda. O programa deve criar uma instância da classe e exibir o lado que está inicialmente voltado para cima. Em seguida, use um loop para lançar a moeda 20 vezes. Cada vez que a moeda for lançada, exiba o lado que está voltado para cima. O programa deve contar o número de vezes que ``cara'' está voltado para cima e o número de vezes que ``coroa'' está voltado para cima, e exibir esses valores após o loop.
+
+\end{enumerate}
+
+\end{document}

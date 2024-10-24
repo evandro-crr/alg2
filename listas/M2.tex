@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{Algoritmos e Programação II\\
+\large Trabalho 2: Implementação de uma Classe String}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section*{Objetivo}
+O objetivo deste trabalho é implementar uma classe \texttt{MinhaString} que encapsule uma c-string e forneça métodos para manipulação. O trabalho visa avaliar o uso de classes, alocação dinâmica e ponteiros. \textbf{Não é permitido utilizar \texttt{std::vector} ou \texttt{std::string} no código, ou qualquer classe que abstraia a alocação dinâmica.}
+
+\section*{Especificações da classe \texttt{MinhaString}}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+    \item \textbf{Construtor:}  Deve permitir a criação de uma string vazia ou a partir de uma cadeia de caracteres (\texttt{const char*}). A memória necessária deve ser alocada dinamicamente no construtor.
+    
+    
+    \item \textbf{Destrutor:} Deve liberar a memória alocada para a string ao final da vida útil do objeto. \textbf{Não deve haver vazamentos de memória.}
+    
+    \item \textbf{Método de Concatenação:} 
+    \begin{itemize}
+        \item Deve modificar a string atual. O método deve aceitar como entrada uma instância de \texttt{MinhaString} ou \texttt{const char*}. Atenção: pode ser necessário alocar mais memória para a concatenação.
+    \end{itemize}
+    
+    \item \textbf{Métodos de Alteração de Caracteres:} 
+    \begin{itemize}
+        \item \texttt{upper:} Converter todos os caracteres para maiúsculas.
+        \item \texttt{lower:} Converter todos os caracteres para minúsculas.
+        \item \texttt{title:} Converter as primeiras letras de cada palavra para maiúsculas e o restante para minúsculas.
+        \item \texttt{snake\_case:} Converter a string de \texttt{CamelCase} para \texttt{snake\_case}.
+        \item \texttt{camelCase:} Converter a string de \texttt{snake\_case} para \texttt{CamelCase}.
+    \end{itemize}
+    
+    \item \textbf{Métodos para Verificação e Conversão de Números:} 
+    \begin{itemize}
+        \item Verificar se a string representa um número (inteiro ou real)
+        \item Retornar o número (int ou double) armazenado na string. Se não for um número, retornar 0.
+    \end{itemize}
+    
+    \item \textbf{Método para Acesso à C-String Interna:} Permitir retornar a c-string interna para utilização no \texttt{cout}. \textbf{Não deve ser possível modificar a string a partir da c-string.}
+\end{enumerate}
+
+\section*{Implementação e Teste}
+A classe \texttt{MinhaString} deve ser instanciada e utilizada em um programa que teste todos os métodos implementados.
+
+\section*{Requisitos Opcionais (\emph{Pontos Extras})}
+A implementação dos requisitos abaixo é opcional, mas pode render pontos extras. Para garantir os pontos extras, é necessário demonstrar compreensão sobre a implementação:
+\begin{itemize}
+    \item Separar a implementação em \texttt{minha\_string.hpp}, \texttt{minha\_string.cpp}, e \texttt{main.cpp}.
+    \item Sobrecarga do operador \texttt{+} para concatenação de strings.
+    \item Sobrecarga do operador \texttt{[]} para acessar um caractere específico da string.
+    \item Permitir que a \texttt{MinhaString} seja utilizada com \texttt{cout}.
+\end{itemize}
+
+\section*{Avaliação}
+O trabalho pode ser realizado em equipes de até três pessoas. A avaliação será feita através da defesa do código, onde os alunos deverão explicar como foi realizada a implementação. A explicação será feita apenas para o professor, que fará perguntas sobre partes específicas do código. A nota individual de cada aluno dependerá das respostas fornecidas.
+
+
+\end{document}

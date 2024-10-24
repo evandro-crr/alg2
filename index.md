@@ -45,3 +45,15 @@ footer: Evandro Chagas Ribeiro da Rosa
     - [Lista de exercícios](listas/5_lista.pdf) 
 - [Aula 7: Introdução a Classes](slides/7_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/7_aula.pdf)
     - [Lista de exercícios](listas/6_lista.pdf) 
+
+---
+
+![bg left:30% 90%](https://api.qrserver.com/v1/create-qr-code/?format=svg&data=https://evandro-crr.github.io/alg2)
+
+
+[evandro-crr.github.io/alg2](https://evandro-crr.github.io/alg2)
+
+
+**Algoritmos e Programação II**
+
+- [Aula 8: Arquivos](slides/8_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)

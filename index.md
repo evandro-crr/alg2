@@ -57,3 +57,4 @@ footer: Evandro Chagas Ribeiro da Rosa
 **Algoritmos e Programação II**
 
 - [Aula 8: Arquivos](slides/8_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
+    - [Lista de exercícios](listas/7_lista.pdf) 

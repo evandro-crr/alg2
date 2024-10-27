@@ -549,7 +549,7 @@ int main() {
 
 ```cpp
 int main() {
-    ofstream file("num.dat", ios::out); 
+    ofstream file("num.dat"); 
     short x = 1297;
     file << x;
     file.close();  
@@ -819,7 +819,7 @@ $ hexdump pessoa.dat -c -X
 0000010  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00  00
 *
 0000030  \0  \0   i   b 002  \0  \0  \0                                
-0000030  00  00  69  62  02  00  00  00                                
+0000030  00  00  69  62  1e  00  00  00                                
 0000038
 ```
 

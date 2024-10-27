@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large VI Lista de Exercícios: Manipulação de Arquivos}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Matrícula: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+  \item Os códigos abaixo contêm um ou mais erros. Identifique-os e explique como corrigi-los:
+    \begin{enumerate}
+      \item
+        \begin{minted}{cpp}
+fstream file(ios::in | ios::out);
+file.open("info.dat");
+if (!file) {
+    cout << "Não foi possível abrir o arquivo.\n";
+}
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+ofstream file;
+file.open("info.dat", ios::in);
+if (file) {
+    cout << "Não foi possível abrir o arquivo.\n";
+}
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+fstream data_file("info.dat", ios::in | ios::binary);
+int x = 5;
+data_file << x;
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+fstream data_file("info.dat", ios::in);
+char stuff[81];
+data_file.get(stuff);
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+fstream data_file("info.dat", ios::in);
+char stuff[81] = "abcdefghijklmnopqrstuvwxyz";
+data_file.put(stuff);
+        \end{minted}
+      \item
+        \begin{minted}{cpp}
+fstream data_file("info.dat", ios::out);
+struct Date {  int month; int day; int year; };
+Date dt = { 4, 2, 98 };
+data_file.write(&dt, sizeof(int));
+        \end{minted}
+    \end{enumerate}
+
+  \item Escreva um programa que solicite ao usuário o nome de um arquivo. O programa deve exibir as 10 primeiras linhas do arquivo na tela. Se o arquivo tiver menos de 10 linhas, o conteúdo inteiro deve ser exibido, com uma mensagem indicando que todo o arquivo foi mostrado.
+
+  \item Escreva um programa que solicite ao usuário o nome de um arquivo. O programa deve exibir o conteúdo do arquivo na tela. Se o conteúdo do arquivo não couber em 24 linhas, o programa deve exibir 24 linhas por vez e depois pausar. A cada pausa, o programa deve esperar o usuário pressionar uma tecla para exibir as próximas 24 linhas.
+
+  \item Escreva um programa que solicite ao usuário o nome de um arquivo. O programa deve exibir as últimas 10 linhas do arquivo na tela. Se o arquivo tiver menos de 10 linhas, o conteúdo inteiro deve ser exibido, com uma mensagem indicando que todo o arquivo foi mostrado.
+
+  \item Escreva um programa que solicite ao usuário o nome de um arquivo. O programa deve exibir o conteúdo do arquivo na tela. Cada linha exibida deve ser precedida de um número de linha, seguido por dois pontos. A numeração das linhas deve começar em 1. Veja o exemplo:
+
+  \texttt{1: Olá\\
+  2: Esse é um exemplo de arquivo\\
+  3: com apenas 3 linhas.}
+
+  Se o conteúdo do arquivo não couber em uma única tela, o programa deve exibir 24 linhas por vez e depois pausar. A cada pausa, o programa deve esperar o usuário pressionar uma tecla para exibir as próximas 24 linhas.
+
+  \item Escreva um programa que solicite ao usuário o nome de um arquivo e uma string para busca. O programa deve procurar no arquivo todas as ocorrências da string especificada. Quando a string for encontrada, a linha que a contém deve ser exibida. Após todas as ocorrências serem localizadas, o programa deve informar quantas vezes a string apareceu no arquivo.
+
+  \item Escreva uma função chamada \texttt{array\_para\_arquivo}. A função deve aceitar três argumentos: o nome de um arquivo, um ponteiro para um array de inteiros e o tamanho do array. A função deve abrir o arquivo especificado no modo binário, escrever o conteúdo do array no arquivo e depois fechar o arquivo. Escreva outra função chamada \texttt{arquivo\_para\_array}. Esta função deve aceitar três argumentos: o nome de um arquivo, um ponteiro para um array de inteiros e o tamanho do array. A função deve abrir o arquivo no modo binário, ler seu conteúdo para o array e depois fechar o arquivo. Escreva um programa completo que demonstre essas funções, utilizando \texttt{array\_para\_arquivo} para gravar um array em um arquivo, e em seguida, usando \texttt{arquivo\_para\_array} para ler os dados do mesmo arquivo. Após ler os dados, exiba o conteúdo do array na tela.
+
+  \item Criptografia de arquivos é a ciência de escrever o conteúdo de um arquivo em código secreto. Seu programa de criptografia deve funcionar como um filtro, lendo o conteúdo de um arquivo, modificando os dados para um código e escrevendo o conteúdo codificado em um segundo arquivo. O segundo arquivo será uma versão do primeiro, mas escrito em código secreto. Embora existam técnicas de criptografia complexas, você deve criar uma simples. Por exemplo, você pode ler o primeiro arquivo um caractere por vez e adicionar 10 ao código ASCII de cada caractere antes de escrevê-lo no segundo arquivo.
+
+  \item Escreva um programa que descriptografe o arquivo produzido pelo programa do exercício anterior. O programa de descriptografia deve ler o conteúdo do arquivo codificado, restaurar os dados ao seu estado original e escrevê-los em outro arquivo.
+  
+\end{enumerate}
+
+\end{document}

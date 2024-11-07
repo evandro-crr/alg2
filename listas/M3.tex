@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{Algoritmos e Programação II\\
+\large Trabalho 3: Leitura de Metadados de Arquivos Binários}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Objetivo}
+Em equipes de até 3 alunos, desenvolvam um programa em C++ que seja capaz de ler e extrair os metadados de um arquivo binário. Exemplos de arquivos binários incluem, mas não estão limitados a, arquivos de áudio, vídeo, imagem, entre outros.
+
+\section*{Descrição da Atividade}
+Cada equipe deverá escolher um formato de arquivo binário (por exemplo, MP3, WAV, JPEG, PNG, MP4, AVI, etc.) e estudar como esse formato organiza e armazena seus metadados. Com base nesse estudo, o grupo deverá desenvolver um programa que:
+
+\begin{itemize}
+  \item Carregue o arquivo binário usando \texttt{fstream} (sem utilizar bibliotecas externas, apenas a STL do C++).
+  \item Extraia e exiba na tela os metadados presentes no arquivo, como título, autor, resolução, duração, bitrate, entre outros que forem aplicáveis ao formato escolhido.
+\end{itemize}
+
+\section*{Requisitos do Programa}
+\begin{itemize}
+  \item O programa deve ser implementado em \textbf{C++}, utilizando a biblioteca padrão (\texttt{fstream} para manipulação de arquivos e outras ferramentas da STL quando necessário).
+  \item O uso de bibliotecas externas está \textbf{proibido}. Todo o processamento e extração de metadados deve ser feito manualmente através da leitura direta dos dados binários.
+  \item A equipe deverá garantir que o programa seja capaz de lidar com diferentes arquivos do formato escolhido, validando adequadamente a entrada.
+\end{itemize}
+
+\section*{Entregáveis}
+\begin{enumerate}
+  \item \textbf{Código-fonte do Programa}:
+    \begin{itemize}
+      \item O código deve ser entregue até a data das apresentações.
+      \item O código deve estar bem estruturado e comentado, explicando as estratégias utilizadas para a leitura e extração dos metadados.
+    \end{itemize}
+    \newpage
+
+  \item \textbf{Apresentação Oral}:
+    \begin{itemize}
+      \item Cada grupo deverá realizar uma apresentação de \textbf{10 minutos}. A apresentação deve conter:
+        \begin{itemize}
+          \item Uma explicação sobre como os metadados são estruturados no formato específico de arquivo escolhido pelo grupo.
+          \item As estratégias adotadas para extrair esses metadados utilizando a manipulação de arquivos binários em C++.
+          \item Uma demonstração prática do programa, mostrando como ele é capaz de ler e exibir os metadados de um exemplo de arquivo.
+        \end{itemize}
+      \item \textbf{Obs}: Não é necessário entregar o material da apresentação, apenas realizá-la no dia definido.
+    \end{itemize}
+\end{enumerate}
+
+
+\section*{Critérios de Avaliação}
+\begin{itemize}
+  \item \textbf{Funcionalidade}: O programa deve ser capaz de extrair corretamente os metadados do formato de arquivo escolhido.
+  \item \textbf{Organização do código}: O código deve ser bem estruturado, modularizado e comentado.
+  \item \textbf{Criatividade e Complexidade}: Serão levados em consideração o formato escolhido e a complexidade dos metadados extraídos.
+  \item \textbf{Qualidade da apresentação}: Clareza na explicação da estrutura dos metadados e do código, além da qualidade da demonstração prática.
+\end{itemize}
+
+\end{document}

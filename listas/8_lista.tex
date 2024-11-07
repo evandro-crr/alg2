@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{minted}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+
+\title{Algoritmos e Programação II\\
+\large VIII Lista de Exercícios: Manipulação de Arquivos}
+\author{Prof. Evandro C. R. Rosa\\UNIVALI}
+\date{}
+
+\begin{document}
+\maketitle
+
+\noindent Nome Completo: \underline{\hspace{8cm}} Matrícula: \underline{\hspace{2.4cm}}
+
+\begin{enumerate}
+  \item Desenvolva um programa de gerenciamento de estoque, onde cada item possui as seguintes informações:
+    \begin{minted}{cpp}
+struct Produto {
+  char codigo[8];
+  char nome[50];
+  char descricao[250];
+  double valor_unitario;
+  int quantidade;
+};
+    \end{minted}
+
+    O programa deve oferecer as seguintes funcionalidades:
+    \begin{itemize}
+      \item Cadastro de novos produtos;
+      \item Atualização dos dados de um produto existente;
+      \item Exclusão de produtos do estoque;
+      \item Geração de relatórios detalhados dos produtos cadastrados;
+    \end{itemize}
+
+    Além disso, todos os dados devem ser armazenados em um arquivo, permitindo que o usuário carregue as informações do estoque ao iniciar o programa.
+
+  \item No exercício anterior, o nome e a descrição do produto possuem um tamanho fixo, definido em tempo de compilação. Isso simplifica a manipulação dos dados no arquivo, porém limita a quantidade de informações que podem ser armazenadas por produto, além de potencialmente aumentar o tamanho do arquivo.
+
+    Adapte o programa anterior para utilizar a seguinte estrutura, onde o nome e a descrição do produto são alocados dinamicamente:
+    \begin{minted}{cpp}
+struct Produto {
+  char codigo[8];
+  char *nome;
+  char *descricao;
+  double valor_unitario;
+  int quantidade;
+};
+    \end{minted}
+
+    Essa modificação deve permitir o uso eficiente da memória, ajustando o espaço alocado conforme a quantidade de dados inseridos pelo usuário.
+\end{enumerate}
+
+\end{document}

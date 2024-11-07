@@ -22,11 +22,11 @@ footer: Evandro Chagas Ribeiro da Rosa
 
 - [Aula 1 : Revisão](slides/1_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/1_aula.pdf)
 - [Aula 2 : Funções](slides/2_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/2_aula.pdf)
-    - [Lista de exercícios](listas/1_lista.pdf) 
+    - [I Lista de exercícios](listas/1_lista.pdf) 
 - [Aula 3: Array](slides/3_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/3_aula.pdf)
-    - [Lista de exercícios](listas/2_lista.pdf) 
+    - [II Lista de exercícios](listas/2_lista.pdf) 
 - [Aula 4: Struct](slides/4_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/4_aula.pdf)
-    - [Lista de exercícios](listas/3_lista.pdf) 
+    - [III Lista de exercícios](listas/3_lista.pdf) 
 
 ---
 
@@ -40,11 +40,11 @@ footer: Evandro Chagas Ribeiro da Rosa
 **Algoritmos e Programação II**
 
 - [Aula 5: Alocação Dinâmica](slides/5_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
-    - [Lista de exercícios](listas/4_lista.pdf) 
+    - [IV Lista de exercícios](listas/4_lista.pdf) 
 - [Aula 6: C-String](slides/6_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/6_aula.pdf)
-    - [Lista de exercícios](listas/5_lista.pdf) 
+    - [V Lista de exercícios](listas/5_lista.pdf) 
 - [Aula 7: Introdução a Classes](slides/7_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/7_aula.pdf)
-    - [Lista de exercícios](listas/6_lista.pdf) 
+    - [VI Lista de exercícios](listas/6_lista.pdf) 
 
 ---
 
@@ -56,5 +56,7 @@ footer: Evandro Chagas Ribeiro da Rosa
 
 **Algoritmos e Programação II**
 
-- [Aula 8: Arquivos](slides/8_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/5_aula.pdf)
-    - [Lista de exercícios](listas/7_lista.pdf) 
+- [Aula 8: Arquivos](slides/8_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/8_aula.pdf)
+    - [VII Lista de exercícios](listas/7_lista.pdf)    
+    - [VIII Lista de exercícios](listas/8_lista.pdf)
+- [Aula 9: Recursão](slides/9_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/9_aula.pdf)

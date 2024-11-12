@@ -60,3 +60,4 @@ footer: Evandro Chagas Ribeiro da Rosa
     - [VII Lista de exercícios](listas/7_lista.pdf)    
     - [VIII Lista de exercícios](listas/8_lista.pdf)
 - [Aula 9: Recursão](slides/9_aula.html) [<i class="fa fa-download" aria-hidden="true"></i>](slides/9_aula.pdf)
+    - [IX Lista de exercícios](listas/9_lista.pdf)    

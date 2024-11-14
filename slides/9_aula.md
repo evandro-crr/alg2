@@ -189,6 +189,18 @@ https://www.mathsisfun.com/games/towerofhanoi.html
 
 ---
 
+# Quick Sort 
+
+![w:700](https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif)
+
+---
+
+# Merge Sort
+
+![w:700](https://static.swpanel.com/doc/2022/images/0415/0415_004.gif)
+
+---
+
 # Algoritmos e Programação II
 
 https://evandro-crr.github.io/alg2
